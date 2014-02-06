@@ -45,6 +45,7 @@ namespace NumberGuesser
                         GuessOutcome.Text += string.Format(" Du har inga fler gissningar. Det hemliga talet var {0}.", SecretNumber.Number);
                         GuessInput.Enabled = false;
                         MakeGuess.Enabled = false;
+                        NewNumber.Visible = true;
                     }
                 }
                 else if (result == Outcome.High)
@@ -55,6 +56,7 @@ namespace NumberGuesser
                         GuessOutcome.Text += string.Format(" Du har inga fler gissningar. Det hemliga talet var {0}.", SecretNumber.Number);
                         GuessInput.Enabled = false;
                         MakeGuess.Enabled = false;
+                        NewNumber.Visible = true;
                     }
                 }
                 else if (result == Outcome.Correct)
@@ -62,6 +64,7 @@ namespace NumberGuesser
                     GuessOutcome.Text += string.Format(" Grattis, du klarade det på {0} försök!", SecretNumber.Count);
                     GuessInput.Enabled = false;
                     MakeGuess.Enabled = false;
+                    NewNumber.Visible = true;
                 }
                 else if (result == Outcome.PreviousGuess)
                 {
@@ -72,7 +75,8 @@ namespace NumberGuesser
 
         protected void NewNumber_Click(object sender, EventArgs e)
         {
-
+            Session.Clear();
+            Response.Redirect("Default.aspx");
         }
     }
 }
