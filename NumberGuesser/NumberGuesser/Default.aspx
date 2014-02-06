@@ -12,6 +12,12 @@
         <asp:TextBox ID="GuessInput" runat="server" autofocus="autofocus" Width="30"></asp:TextBox>
         <asp:Button ID="MakeGuess" runat="server" Text="Skicka gissning" OnClick="MakeGuess_Click" />
     </div>
+    <div>
+        <asp:Label ID="GuessOutcome" runat="server" Text="Label" Visible="false"></asp:Label>
+    </div>
+    <div>
+        <asp:Button ID="NewNumber" runat="server" Text="Slumpa nytt hemligt tal" Visible="false" OnClick="NewNumber_Click" />
+    </div>
     </form>
 </body>
 </html>

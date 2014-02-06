@@ -14,7 +14,7 @@ namespace NumberGuesser.Model
         {
             get
             {
-                return _previousGuesses.Count < MaxNumberOfGuesses;
+                return (_previousGuesses.Count < MaxNumberOfGuesses);
             }
         }
         public int Count
@@ -64,11 +64,11 @@ namespace NumberGuesser.Model
                 return Outcome.PreviousGuess;
             }
             _previousGuesses.Add(guess);
-            if (guess < Number)
+            if (guess < _number)
             {
                 return Outcome.Low;
             }
-            else if (guess > Number)
+            else if (guess > _number)
             {
                 return Outcome.High;
             }
