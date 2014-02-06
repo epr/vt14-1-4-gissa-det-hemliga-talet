@@ -16,9 +16,9 @@ namespace NumberGuesser
             {
                 if (Session["SecretNumber"] == null)
                 {
-                    Session["SecretNumber"] = new SecretNumber();
+                    Session["SecretNumber"] = new SecretNumber(); //starta ny session om det inte finns en redan
                 }
-                return Session["SecretNumber"] as SecretNumber;
+                return Session["SecretNumber"] as SecretNumber; //skicka tillbaka sessionen
             }
         }
         protected void Page_Load(object sender, EventArgs e)
@@ -32,10 +32,6 @@ namespace NumberGuesser
             {
                 int guess = int.Parse(GuessInput.Text);
                 Outcome result = SecretNumber.MakeGuess(guess);
-                if (!GuessOutcome.Visible)
-                {
-                    GuessOutcome.Visible = true;
-                }
                 GuessOutcome.Text = string.Join(", ", SecretNumber.PreviousGuesses);
                 if (result == Outcome.Low)
                 {
