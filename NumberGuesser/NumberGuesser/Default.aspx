@@ -10,7 +10,7 @@
     <div>
         <label for="GuessInput">Ange ett tal mellan 1 och 100: </label>
         <asp:TextBox ID="GuessInput" runat="server" autofocus="autofocus" Width="30"></asp:TextBox>
-        <asp:Button ID="MakeGuess" runat="server" Text="Skicka gissning" />
+        <asp:Button ID="MakeGuess" runat="server" Text="Skicka gissning" OnClick="MakeGuess_Click" />
     </div>
     </form>
 </body>
