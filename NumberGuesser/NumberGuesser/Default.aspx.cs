@@ -35,10 +35,10 @@ namespace NumberGuesser
                 GuessOutcome.Text = string.Join(", ", SecretNumber.PreviousGuesses);
                 if (result == Outcome.Low)
                 {
-                    GuessOutcome.Text += " För lågt!";
+                    GuessOutcome.Text += " ⇩ För lågt!";
                     if (!SecretNumber.CanMakeGuess)
                     {
-                        GuessOutcome.Text += string.Format(" Du har inga fler gissningar. Det hemliga talet var {0}.", SecretNumber.Number);
+                        GuessOutcome.Text += string.Format("\n✘ Du har inga fler gissningar. Det hemliga talet var {0}.", SecretNumber.Number);
                         GuessInput.Enabled = false;
                         MakeGuess.Enabled = false;
                         NewNumber.Visible = true;
@@ -46,10 +46,10 @@ namespace NumberGuesser
                 }
                 else if (result == Outcome.High)
                 {
-                    GuessOutcome.Text += " För högt!";
+                    GuessOutcome.Text += " ⇧ För högt!";
                     if (!SecretNumber.CanMakeGuess)
                     {
-                        GuessOutcome.Text += string.Format(" Du har inga fler gissningar. Det hemliga talet var {0}.", SecretNumber.Number);
+                        GuessOutcome.Text += string.Format("\n✘ Du har inga fler gissningar. Det hemliga talet var {0}.", SecretNumber.Number);
                         GuessInput.Enabled = false;
                         MakeGuess.Enabled = false;
                         NewNumber.Visible = true;
@@ -57,14 +57,14 @@ namespace NumberGuesser
                 }
                 else if (result == Outcome.Correct)
                 {
-                    GuessOutcome.Text += string.Format(" Grattis, du klarade det på {0} försök!", SecretNumber.Count);
+                    GuessOutcome.Text += string.Format(" ✔ Grattis, du klarade det på {0} försök!", SecretNumber.Count);
                     GuessInput.Enabled = false;
                     MakeGuess.Enabled = false;
                     NewNumber.Visible = true;
                 }
                 else if (result == Outcome.PreviousGuess)
                 {
-                    GuessOutcome.Text += " Du har redan gissat på det!";
+                    GuessOutcome.Text += " ⚠ Du har redan gissat på det!";
                 }
             }
         }

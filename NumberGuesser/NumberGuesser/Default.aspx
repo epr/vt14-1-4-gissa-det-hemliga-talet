@@ -4,15 +4,17 @@
 <html>
 <head runat="server">
     <title>Gissa det hemliga talet - Eddy Proca</title>
+    <link rel="stylesheet" href="~/screen.css">
 </head>
 <body>
+    <h1>Gissa det hemliga talet</h1>
     <form id="form1" runat="server">
     <div>
-        <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+        <asp:ValidationSummary ID="ValidationSummary1" CssClass="error" HeaderText="Ett fel inträffade. Korrigera felet och gör ett nytt försök." runat="server" />
         <label for="GuessInput">Ange ett tal mellan 1 och 100: </label>
         <asp:TextBox ID="GuessInput" runat="server" autofocus="autofocus" Width="30"></asp:TextBox>
-        <asp:RangeValidator ControlToValidate="GuessInput" MinimumValue="1" MaximumValue="100" Type="Integer" Display="Dynamic" ID="RangeValidator1" runat="server" ErrorMessage="Ange ett tal mellan 1 och 100." Text="*"></asp:RangeValidator>
-        <asp:RequiredFieldValidator ControlToValidate="GuessInput" Display="Dynamic" ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ett tal måste anges." Text="*"></asp:RequiredFieldValidator>
+        <asp:RangeValidator ControlToValidate="GuessInput" MinimumValue="1" MaximumValue="100" Type="Integer" Display="Dynamic" CssClass="error" ID="RangeValidator1" runat="server" ErrorMessage="Ange ett tal mellan 1 och 100." Text="*"></asp:RangeValidator>
+        <asp:RequiredFieldValidator ControlToValidate="GuessInput" Display="Dynamic" CssClass="error" ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ett tal måste anges." Text="*"></asp:RequiredFieldValidator>
         <asp:Button ID="MakeGuess" runat="server" Text="Skicka gissning" OnClick="MakeGuess_Click" />
     </div>
     <div>
