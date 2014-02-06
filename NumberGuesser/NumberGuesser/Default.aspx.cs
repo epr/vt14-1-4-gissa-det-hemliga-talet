@@ -31,8 +31,8 @@ namespace NumberGuesser
             if (IsValid)
             {
                 int guess = int.Parse(GuessInput.Text);
-                Outcome result = SecretNumber.MakeGuess(guess);
-                GuessOutcome.Text = string.Join(", ", SecretNumber.PreviousGuesses);
+                Outcome result = SecretNumber.MakeGuess(guess); //testa gissningen
+                GuessOutcome.Text = string.Join(", ", SecretNumber.PreviousGuesses); //visa alla gissningar
                 if (result == Outcome.Low)
                 {
                     GuessOutcome.Text += " ⇩ För lågt!";
@@ -71,8 +71,8 @@ namespace NumberGuesser
 
         protected void NewNumber_Click(object sender, EventArgs e)
         {
-            Session.Clear();
-            Response.Redirect("Default.aspx");
+            Session.Clear(); //skapa ny session
+            Response.Redirect("Default.aspx"); //ladda om sidan
         }
     }
 }
